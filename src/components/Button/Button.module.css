@@ -1,0 +1,27 @@
+.button {
+    outline: none;
+    border: 1px var(--borderColor) solid;
+    max-width: 200px;
+    width: 100%;
+    min-height: 30px;
+    font-weight: 600;
+
+    background-color: var(--buttonColorBg);
+    color: var(--buttonColor);
+    transition: 0.5s all ease;
+    box-shadow: 0 0 5px 5px var(--buttonColorBg);
+
+    border-radius: 15px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: var(--ActButtonColor);
+    box-shadow: 0 0 5px 5px var(--ActButtonColor);
+}
+
+.button:disabled {
+    cursor: no-drop;
+    background-color: none;
+    box-shadow: none;
+}
