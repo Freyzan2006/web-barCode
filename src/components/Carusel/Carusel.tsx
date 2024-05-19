@@ -16,6 +16,8 @@ const Carusel: React.FC<IProps> = ({ w, h, listScene }) => {
     
     
     let [ isScene, setIsScene ] = useState<number>(0);
+
+    
     
     let Scene = listScene[isScene];
 
@@ -29,11 +31,23 @@ const Carusel: React.FC<IProps> = ({ w, h, listScene }) => {
         else setIsScene(++isScene);
     }
 
+    const pointControll = (index: number) => setIsScene(index);
+
     return (
-        <div className = { css.Carusel } style = { { width: w, height: h } }>
-            <button className = { css.next } onClick = { next }><FaArrowAltCircleLeft /></button>
-            { Scene }
-            <button className = { css.back } onClick = { backe }><FaArrowAltCircleRight /></button>
+        <div className = { css.content } style = { { width: w, height: h } }>
+            <div className = { css.Carusel }>
+                <button className = { css.next } onClick = { next }><FaArrowAltCircleLeft /></button>
+                { Scene }
+                <button className = { css.back } onClick = { backe }><FaArrowAltCircleRight /></button>
+            </div>
+            <div className = { css.positionScene }>
+                {
+                    listScene.map((_, index) => (
+                        
+                        <div onClick = { () => pointControll(index) } className = { isScene == index ? css.point : css.point__action } key = { index }></div>
+                    ))
+                }
+            </div>
         </div>
     )
 }

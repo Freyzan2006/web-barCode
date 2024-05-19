@@ -4,4 +4,10 @@
     align-items: center;
     flex-direction: column;
     gap: 30px;
+    padding: 15px;
+}
+
+.barCode__title {
+    color: var(--textColor);
+    font-size: 30px;
 }

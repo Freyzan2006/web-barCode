@@ -21,6 +21,7 @@ const BarCode: React.FC<IProps> = ( { isDisabledBtn, inputState } ) => {
 
     return (
         <div className = { css.barCode }>
+            <h2 className =  { css.barCode__title }>Штрих-код</h2>
             <img id = "barcode" ref = { barCodeRef } />
             <Button callback = { createBarcode } lable = "Сгенерировать Штрих-код" isDisabledBtn = { isDisabledBtn } inputState = { inputState } /> 
         </div>

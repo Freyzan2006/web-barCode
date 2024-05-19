@@ -18,9 +18,8 @@ const QrCode: React.FC<IProps> = ({ isDisabledBtn, inputState }) => {
 
     return (
         <div className = { css.QrCode }>
+            <h2 className = { css.QrCode__title }>Qr-код</h2>
             <canvas width = { 0 } height = { 0 } id = "qrcode" ref = { qrCodeRef }></canvas>
-
-
             <Button callback = { createQrCode } lable = "Сгенерировать QR код" isDisabledBtn = { isDisabledBtn } inputState = { inputState } /> 
         </div>
     )
